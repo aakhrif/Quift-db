@@ -9,6 +9,8 @@ services:
       - ./init:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
+    networks:
+      - backend-net
 
   adminer:
     image: adminer
