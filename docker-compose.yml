@@ -11,12 +11,14 @@ services:
       - "3306:3306"
     networks:
       - backend-net
+    restart: unless-stopped
 
   adminer:
     image: adminer
     container_name: crm-adminer
     ports:
       - "8080:8080"
+    restart: unless-stopped
 
 networks:
   backend-net:
